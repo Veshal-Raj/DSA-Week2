@@ -21,6 +21,7 @@ function heapify(arr, n, i) {
   }
   
   function heapSort(arr) {
+     
     const n = arr.length;
   
     // Build max heap
@@ -39,7 +40,7 @@ function heapify(arr, n, i) {
   }
   
   // Example usage:
-  const arr = [12, 11, 13, 5, 6, 7];
+  const arr = [100, 11, 13,22, 155, 6, 27];
   console.log("Original array:", arr);
   console.log("Sorted array:", heapSort(arr));
   

@@ -36,17 +36,18 @@ class BTS {
     if (val < node.val) return this.searchNode(node.left, val);
     else return this.searchNode(node.right, val);
   }
-   findClosestValue(val){
-    if(this.search(val))return val
-    let prev = val-1
-    let post = val+1
-    while(true){
-      if(this.search(prev)) return prev
-      else prev--
-      if(this.search(post))return post
-      else post++
+  findClosestValue(val) {
+    if (this.search(val)) return val;
+    let prev = val - 1;
+    let post = val + 1;
+    while (true) {
+      if (this.search(prev)) return prev;
+      else prev--;
+      if (this.search(post)) return post;
+      else post++;
     }
-   }
+  }
+  
 
   delete(val) {
     this.root = this.deleteNode(this.root, val);
@@ -76,6 +77,7 @@ class BTS {
     }
     return curr.val;
   }
+  
   min(root){
     if(!root.left) return root.val
     else return this.min(root.left)
@@ -102,11 +104,11 @@ class BTS {
 const bts = new BTS();
 bts.Insert(10);
 bts.Insert(2);
-bts.Insert(33);
+bts.Insert(23);
 bts.Insert(4);
-bts.Insert(55);
-bts.Insert(6);
+bts.Insert(50);
+bts.Insert(61);
 bts.print();
-console.log(bts.findClosestValue(30))
+console.log(bts.findClosestValue(20))
 console.log("max: "+bts.min(bts.root))
 console.log("min: "+bts.max(bts.root))
